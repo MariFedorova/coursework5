@@ -11,7 +11,7 @@ class DBManager:
         self.cur.execute("""
         SELECT company_name, COUNT(*) FROM vacancies
         JOIN companies USING(company_id)
-        GROUP BY company_id
+        GROUP BY company_name
         """)
         count_vac = self.cur.fetchall()
         print(count_vac)
